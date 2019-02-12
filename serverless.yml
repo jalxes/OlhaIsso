@@ -1,0 +1,15 @@
+service: olha-isso
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: us-east-1
+
+functions:
+  olha-isso:
+    handler: lambda_function.lambda_handler
+
+    events:
+      - http:
+          path: olha-isso
+method: post
